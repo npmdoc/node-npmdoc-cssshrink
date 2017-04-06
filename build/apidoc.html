@@ -1,0 +1,299 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/stoyan/cssshrink"
+
+    >cssshrink (v0.0.5)</a>
+</h1>
+<h4>CSS minifier</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cssshrink">module cssshrink</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.shrink">
+            function <span class="apidocSignatureSpan">cssshrink.</span>shrink
+            <span class="apidocSignatureSpan">(css)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.shrinkAST">
+            function <span class="apidocSignatureSpan">cssshrink.</span>shrinkAST
+            <span class="apidocSignatureSpan">(ast)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cssshrink.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cssshrink.util">module cssshrink.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.util.addslashes">
+            function <span class="apidocSignatureSpan">cssshrink.util.</span>addslashes
+            <span class="apidocSignatureSpan">(str, q)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.util.stripLeadingZero">
+            function <span class="apidocSignatureSpan">cssshrink.util.</span>stripLeadingZero
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.util.stripslashes">
+            function <span class="apidocSignatureSpan">cssshrink.util.</span>stripslashes
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.util.unfix">
+            function <span class="apidocSignatureSpan">cssshrink.util.</span>unfix
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cssshrink" id="apidoc.module.cssshrink">module cssshrink</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.shrink" id="apidoc.element.cssshrink.shrink">
+        function <span class="apidocSignatureSpan">cssshrink.</span>shrink
+        <span class="apidocSignatureSpan">(css)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shrink(css) {
+  var ast = gonzo.parse(css);
+  ast = traverseAST(ast);
+  return gonzo.toCSS(ast);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage
+
+```js
+  var cssshrink = require(&#x27;cssshrink&#x27;);
+  var css =
+    &#x27;a{color: #ff0000;}&#x27;;
+  css = cssshrink.<span class="apidocCodeKeywordSpan">shrink</span>(css);
+```
+
+Result:
+
+    a{color:red}
+
+## Playground
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.shrinkAST" id="apidoc.element.cssshrink.shrinkAST">
+        function <span class="apidocSignatureSpan">cssshrink.</span>shrinkAST
+        <span class="apidocSignatureSpan">(ast)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shrinkAST(ast) {
+  return traverseAST(ast);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cssshrink.util" id="apidoc.module.cssshrink.util">module cssshrink.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.util.addslashes" id="apidoc.element.cssshrink.util.addslashes">
+        function <span class="apidocSignatureSpan">cssshrink.util.</span>addslashes
+        <span class="apidocSignatureSpan">(str, q)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addslashes(str, q) {
+  str = stripslashes(str);
+  return str.replace(new RegExp(q, &#x27;g&#x27;), &#x27;\\&#x27; + q);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  process: function(node) {
+for (var i = 0; i &#x3c; node.length; i++) {
+  if (node[i][0] === &#x27;uri&#x27;) {
+    if (node[i][1][0] === &#x27;raw&#x27;) { // unquoted url
+      var q = &#x27;&#x22;&#x27;;
+      // replace with a string quoted with default &#x22; and escape other &#x22;s
+      // later the quotes visitor optimizes &#x22; vs &#x27;
+      node[i] = [&#x27;string&#x27;, [q, util.<span class="apidocCodeKeywordSpan">addslashes</span>(node[i][1][1], q), q].join(&#
+x27;&#x27;)];
+    } else if (node[i][1][0] === &#x27;string&#x27;) {
+      // rewrite node throwing out url() and leaving string only
+      node[i] = [&#x27;string&#x27;, node[i][1][1]];
+    }
+  }
+}
+return node;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.util.stripLeadingZero" id="apidoc.element.cssshrink.util.stripLeadingZero">
+        function <span class="apidocSignatureSpan">cssshrink.util.</span>stripLeadingZero
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stripLeadingZero(n) {
+  // strip leading 0.
+  if (n &#x3e; 0 &#x26;&#x26; n &#x3c; 1) {
+    n = String(n).replace(&#x27;0.&#x27;, &#x27;.&#x27;);
+  }
+  return String(n);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.util.stripslashes" id="apidoc.element.cssshrink.util.stripslashes">
+        function <span class="apidocSignatureSpan">cssshrink.util.</span>stripslashes
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stripslashes(str) {
+  return str.replace(/\\(.?)/g, function(match, sym) {
+    return sym === &#x27;&#x22;&#x27; || sym === &#x22;&#x27;&#x22;
+      ? sym
+      : match;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = {
+
+  test: function(name, nodes) {
+return name === &#x27;string&#x27;;
+  },
+
+  process: function(node) {
+var str = util.<span class="apidocCodeKeywordSpan">stripslashes</span>(node[1].slice(1, -1));
+
+// try consistent &#x22; first
+var q = &#x27;&#x22;&#x27;;
+var doubles = str.match(/&#x22;/g);
+if (!doubles) {
+  node[1] = [q, str, q].join(&#x27;&#x27;);
+  return node;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.util.unfix" id="apidoc.element.cssshrink.util.unfix">
+        function <span class="apidocSignatureSpan">cssshrink.util.</span>unfix
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unfix(str) {
+  return str.toLowerCase().replace(/^\-(ms|webkit|moz|o)\-/, &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
