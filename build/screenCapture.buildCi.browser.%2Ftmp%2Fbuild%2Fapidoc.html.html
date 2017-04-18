@@ -80,6 +80,28 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.cssshrink.shrink">module cssshrink.shrink</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.shrink.shrink">
+            function <span class="apidocSignatureSpan">cssshrink.</span>shrink
+            <span class="apidocSignatureSpan">(css)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cssshrink.shrink.shrinkAST">
+            function <span class="apidocSignatureSpan">cssshrink.shrink.</span>shrinkAST
+            <span class="apidocSignatureSpan">(ast)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
     <li class="apidocModuleLi"><a href="#apidoc.module.cssshrink.util">module cssshrink.util</a><ol>
 
         <li>
@@ -173,6 +195,59 @@ Result:
     </ul>
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cssshrink.shrink" id="apidoc.module.cssshrink.shrink">module cssshrink.shrink</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.shrink.shrink" id="apidoc.element.cssshrink.shrink.shrink">
+        function <span class="apidocSignatureSpan">cssshrink.</span>shrink
+        <span class="apidocSignatureSpan">(css)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shrink(css) {
+  var ast = gonzo.parse(css);
+  ast = traverseAST(ast);
+  return gonzo.toCSS(ast);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Usage
+
+```js
+  var cssshrink = require('cssshrink');
+  var css =
+    'a{color: #ff0000;}';
+  css = cssshrink.<span class="apidocCodeKeywordSpan">shrink</span>(css);
+```
+
+Result:
+
+    a{color:red}
+
+## Playground
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cssshrink.shrink.shrinkAST" id="apidoc.element.cssshrink.shrink.shrinkAST">
+        function <span class="apidocSignatureSpan">cssshrink.shrink.</span>shrinkAST
+        <span class="apidocSignatureSpan">(ast)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shrinkAST(ast) {
+  return traverseAST(ast);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>
